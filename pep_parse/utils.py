@@ -3,7 +3,7 @@ def make_rows(
         total: int
 ) -> list[dict[str: int]]:
     '''Фун-ия формирования строк.'''
-    results = []
+    results: list = []
     for status in status_count.keys():
         row = {
             'Статус': status,

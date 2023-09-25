@@ -2,7 +2,7 @@ import csv
 import datetime as dt
 import logging
 
-from constants import (
+from pep_parse.constants import (
     BASE_DIR,
     RESULTS_DIR_POSTFIX,
     DATETIME_FORMAT,
