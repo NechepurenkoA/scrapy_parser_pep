@@ -14,4 +14,5 @@ def make_rows(
         'Статус': 'Total',
         'Количество': total
     }
+    results.append(row)
     return results
