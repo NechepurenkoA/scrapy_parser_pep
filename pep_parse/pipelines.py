@@ -1,5 +1,6 @@
 import csv
 import datetime as dt
+import logging
 
 from constants import (
     BASE_DIR,
@@ -16,7 +17,10 @@ class PepParsePipeline:
         try:
             results_dir.mkdir(exist_ok=True)
         except (FileNotFoundError, OSError) as exc:
-            raise exc
+            logging.CRITICAL(
+                f'Произошла ошибка при создании папки results: {exc}'
+            )
+            return
         now = dt.datetime.now()
         now_formatted = now.strftime(DATETIME_FORMAT)
         file_name = f'status_summary_{now_formatted}.csv'
